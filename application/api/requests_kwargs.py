@@ -16,7 +16,8 @@ create_and_train_model = {"dataset_path": fields.String(required=True),\
 predict_iris_species = {"SepalLengthCm": fields.Float(required=True),\
                         "SepalWidthCm": fields.Float(required=True),\
                         "PetalLengthCm": fields.Float(required=True),\
-                        "PetalWidthCm": fields.Float(required=True)}
+                        "PetalWidthCm": fields.Float(required=True),\
+                        "PathToModel": fields.String(required=True)}
 
 create_api_key = {"username": fields.Str(required=True),\
                   "password": fields.Str(required=True),\

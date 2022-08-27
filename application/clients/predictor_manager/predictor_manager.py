@@ -7,11 +7,11 @@ class PredictorManager(GrpcClient):
         super().__init__(address)
         self.channel = super().get_channel()
     
-    def predict_iris_speices(self, SepalLengthCm, SepalWidthCm,PetalLengthCm, PetalWidthCm):
+    def predict_iris_speices(self, SepalLengthCm, SepalWidthCm,PetalLengthCm, PetalWidthCm, PathToModel):
         stub = PredictionsStub(self.channel)
         response = super().stub(lambda x: stub.IrisSpeciesPredict(x),IrisSpeciesPredictionRequest\
                     (SepalLengthCm =SepalLengthCm, SepalWidthCm = SepalWidthCm,\
-                     PetalLengthCm = PetalLengthCm, PetalWidthCm = PetalWidthCm))
+                     PetalLengthCm = PetalLengthCm, PetalWidthCm = PetalWidthCm, PathToModel=PathToModel))
         return response
 
     def create_and_train_model(self, dataset_path ,epochs ,optimizer_params,\

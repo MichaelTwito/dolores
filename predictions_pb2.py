@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11predictions.proto\"x\n\x1cIrisSpeciesPredictionRequest\x12\x15\n\rSepalLengthCm\x18\x01 \x01(\x02\x12\x14\n\x0cSepalWidthCm\x18\x02 \x01(\x02\x12\x15\n\rPetalLengthCm\x18\x03 \x01(\x02\x12\x14\n\x0cPetalWidthCm\x18\x04 \x01(\x02\"0\n\x1dIrisSpeciesPredictionResponse\x12\x0f\n\x07species\x18\x01 \x01(\t\"\xe8\x02\n\x1a\x43reateAndTrainModelRequest\x12\x14\n\x0c\x64\x61taset_path\x18\x01 \x01(\t\x12\x0e\n\x06\x65pochs\x18\x02 \x01(\x05\x12J\n\x10optimizer_params\x18\x03 \x03(\x0b\x32\x30.CreateAndTrainModelRequest.OptimizerParamsEntry\x12\x11\n\tcriterion\x18\x04 \x01(\t\x12\x42\n\x0cmodel_params\x18\x05 \x03(\x0b\x32,.CreateAndTrainModelRequest.ModelParamsEntry\x12\x15\n\rsave_model_at\x18\x06 \x01(\t\x1a\x36\n\x14OptimizerParamsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x32\n\x10ModelParamsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"/\n\x1b\x43reateAndTrainModelResponse\x12\x10\n\x08\x61\x63\x63uracy\x18\x01 \x01(\x02\x32\xb4\x01\n\x0bPredictions\x12S\n\x12IrisSpeciesPredict\x12\x1d.IrisSpeciesPredictionRequest\x1a\x1e.IrisSpeciesPredictionResponse\x12P\n\x13\x43reateAndTrainModel\x12\x1b.CreateAndTrainModelRequest\x1a\x1c.CreateAndTrainModelResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11predictions.proto\"\x8d\x01\n\x1cIrisSpeciesPredictionRequest\x12\x15\n\rSepalLengthCm\x18\x01 \x01(\x02\x12\x14\n\x0cSepalWidthCm\x18\x02 \x01(\x02\x12\x15\n\rPetalLengthCm\x18\x03 \x01(\x02\x12\x14\n\x0cPetalWidthCm\x18\x04 \x01(\x02\x12\x13\n\x0bPathToModel\x18\x05 \x01(\t\"0\n\x1dIrisSpeciesPredictionResponse\x12\x0f\n\x07species\x18\x01 \x01(\t\"\xe8\x02\n\x1a\x43reateAndTrainModelRequest\x12\x14\n\x0c\x64\x61taset_path\x18\x01 \x01(\t\x12\x0e\n\x06\x65pochs\x18\x02 \x01(\x05\x12J\n\x10optimizer_params\x18\x03 \x03(\x0b\x32\x30.CreateAndTrainModelRequest.OptimizerParamsEntry\x12\x11\n\tcriterion\x18\x04 \x01(\t\x12\x42\n\x0cmodel_params\x18\x05 \x03(\x0b\x32,.CreateAndTrainModelRequest.ModelParamsEntry\x12\x15\n\rsave_model_at\x18\x06 \x01(\t\x1a\x36\n\x14OptimizerParamsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x32\n\x10ModelParamsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"/\n\x1b\x43reateAndTrainModelResponse\x12\x10\n\x08\x61\x63\x63uracy\x18\x01 \x01(\x02\x32\xb4\x01\n\x0bPredictions\x12S\n\x12IrisSpeciesPredict\x12\x1d.IrisSpeciesPredictionRequest\x1a\x1e.IrisSpeciesPredictionResponse\x12P\n\x13\x43reateAndTrainModel\x12\x1b.CreateAndTrainModelRequest\x1a\x1c.CreateAndTrainModelResponseb\x06proto3')
 
 
 
@@ -76,18 +76,18 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _CREATEANDTRAINMODELREQUEST_OPTIMIZERPARAMSENTRY._serialized_options = b'8\001'
   _CREATEANDTRAINMODELREQUEST_MODELPARAMSENTRY._options = None
   _CREATEANDTRAINMODELREQUEST_MODELPARAMSENTRY._serialized_options = b'8\001'
-  _IRISSPECIESPREDICTIONREQUEST._serialized_start=21
-  _IRISSPECIESPREDICTIONREQUEST._serialized_end=141
-  _IRISSPECIESPREDICTIONRESPONSE._serialized_start=143
-  _IRISSPECIESPREDICTIONRESPONSE._serialized_end=191
-  _CREATEANDTRAINMODELREQUEST._serialized_start=194
-  _CREATEANDTRAINMODELREQUEST._serialized_end=554
-  _CREATEANDTRAINMODELREQUEST_OPTIMIZERPARAMSENTRY._serialized_start=448
-  _CREATEANDTRAINMODELREQUEST_OPTIMIZERPARAMSENTRY._serialized_end=502
-  _CREATEANDTRAINMODELREQUEST_MODELPARAMSENTRY._serialized_start=504
-  _CREATEANDTRAINMODELREQUEST_MODELPARAMSENTRY._serialized_end=554
-  _CREATEANDTRAINMODELRESPONSE._serialized_start=556
-  _CREATEANDTRAINMODELRESPONSE._serialized_end=603
-  _PREDICTIONS._serialized_start=606
-  _PREDICTIONS._serialized_end=786
+  _IRISSPECIESPREDICTIONREQUEST._serialized_start=22
+  _IRISSPECIESPREDICTIONREQUEST._serialized_end=163
+  _IRISSPECIESPREDICTIONRESPONSE._serialized_start=165
+  _IRISSPECIESPREDICTIONRESPONSE._serialized_end=213
+  _CREATEANDTRAINMODELREQUEST._serialized_start=216
+  _CREATEANDTRAINMODELREQUEST._serialized_end=576
+  _CREATEANDTRAINMODELREQUEST_OPTIMIZERPARAMSENTRY._serialized_start=470
+  _CREATEANDTRAINMODELREQUEST_OPTIMIZERPARAMSENTRY._serialized_end=524
+  _CREATEANDTRAINMODELREQUEST_MODELPARAMSENTRY._serialized_start=526
+  _CREATEANDTRAINMODELREQUEST_MODELPARAMSENTRY._serialized_end=576
+  _CREATEANDTRAINMODELRESPONSE._serialized_start=578
+  _CREATEANDTRAINMODELRESPONSE._serialized_end=625
+  _PREDICTIONS._serialized_start=628
+  _PREDICTIONS._serialized_end=808
 # @@protoc_insertion_point(module_scope)
