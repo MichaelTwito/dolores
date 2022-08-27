@@ -2,7 +2,7 @@
 
 from application.models import User
 from .orm_repository_base import RepositoryBase
-from application.services.utils import get_from_obj_or_direct
+from ..utils.helper import get_from_obj_or_direct
 
 
 class UserRepository(RepositoryBase):
@@ -16,7 +16,6 @@ class UserRepository(RepositoryBase):
     def list_users(self):
         return self.session().query(User).all()
 
-            
     def create(self, user):
         user.name = get_from_obj_or_direct(user.name, "name")
         user.email = get_from_obj_or_direct(user.email, "email")

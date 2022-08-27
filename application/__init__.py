@@ -1,10 +1,9 @@
 import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask import current_app,request,jsonify
 from flask_migrate import Migrate
 from sqlalchemy_utils import database_exists, create_database
-
-
 
 db = SQLAlchemy()
 
@@ -22,9 +21,9 @@ def init_app(test_config=None):
 
     db.init_app(app)
     Migrate(app, db)
-
+    
     with app.app_context():
-        from . import routes
-        from . import models
-
+        from .api import routes
+        app.register_blueprint(routes.router)
+    
     return app

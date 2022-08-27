@@ -1,16 +1,14 @@
 import functools
-from flask import request
-from . import user_service
-from flask import current_app
-from hmac import compare_digest
+from flask import request, current_app
+from . import user_service, api_key_service
 from werkzeug.security import check_password_hash
+
 
 app = current_app._get_current_object()
 super_admin_username = app.config['SUPER_ADMIN_USERNAME']
 
 def is_api_key_valid(api_key):
-    user = user_service.get_user(api_key)
-    return True if user and compare_digest(user['name'], api_key) else False
+    return api_key_service.is_exist(api_key)
 
 def api_required(func):
     @functools.wraps(func)
@@ -18,7 +16,7 @@ def api_required(func):
         api_key = request.headers.get('x-api-key')
         if not api_key: return {"message": "Please provide an API key"}, 400
         return func(*args, **kwargs) if is_api_key_valid(api_key)\
-                                     else {"message": "The provided API key is not valid"}, 403           
+                                     else ({"message": "The provided API key is not valid"}, 403)           
     return decorator
 
 def is_valid_superadmin(username, password):

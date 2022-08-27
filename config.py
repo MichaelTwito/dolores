@@ -1,7 +1,6 @@
 import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 
-
 class Config(object):
     DEBUG = False
     TESTING = False
@@ -9,6 +8,7 @@ class Config(object):
     SECRET_KEY = 'this-really-needs-to-be-changed'
     SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
     SUPER_ADMIN_USERNAME = os.environ['SUPER_ADMIN_USERNAME']
+    GRPC_PREDICTOR_MANAGER_NODE = os.environ['GRPC_PREDICTOR_MANAGER_NODE']
 
 
 class ProductionConfig(Config):
