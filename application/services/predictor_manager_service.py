@@ -5,7 +5,6 @@ app = current_app._get_current_object()
 grpc_predictor_manager_node = app.config['GRPC_PREDICTOR_MANAGER_NODE']
 predictor = PredictorManager(grpc_predictor_manager_node)
 
-
 def create_and_train_model(*args):
     return predictor.create_and_train_model(*args).accuracy
 
