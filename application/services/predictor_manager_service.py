@@ -6,7 +6,7 @@ grpc_predictor_manager_node = app.config['GRPC_PREDICTOR_MANAGER_NODE']
 predictor = PredictorManager(grpc_predictor_manager_node)
 
 def create_and_train_model(*args):
-    return predictor.create_and_train_model(*args).accuracy
+    return predictor.create_and_train_model(*args)
 
 def predict_iris_speices(*args):
     return predictor.predict_iris_speices(*args).species

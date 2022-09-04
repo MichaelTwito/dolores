@@ -1,4 +1,4 @@
-from flask import request,jsonify
+from flask import request, jsonify
 from ..utils.error_handler import error_handler
 from application.services import user_service, api_key_service, predictor_manager_service
 
@@ -15,9 +15,10 @@ def list_users(): return jsonify(user_service.list_users())
 def create_and_train_model(dataset_path: str ,epochs: int,\
                          optimizer_params: dict, criterion: str,\
                          model_params: dict, save_model_at: str):
-    return jsonify({"params": request.json ,\
-                    "accuracy": str(predictor_manager_service.create_and_train_model(\
-                    dataset_path ,epochs ,optimizer_params,criterion ,model_params ,save_model_at))}), 200
+    trained_model_results = predictor_manager_service.create_and_train_model(\
+                    dataset_path ,epochs ,optimizer_params,criterion ,model_params ,save_model_at)
+    return jsonify({"accuracy": str(trained_model_results.accuracy),\
+                    "saved_model_path": str(trained_model_results.saved_model_path)}), 200
 
 @error_handler
 def predict_iris_species(SepalLengthCm: float ,SepalWidthCm: float,\
