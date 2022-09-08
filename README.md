@@ -1,5 +1,5 @@
 
-### Development
+# Development
 ## PROTOBUFS
 After updating protobufs protocol, run:
 ```
@@ -15,7 +15,7 @@ flask db migrate
 flask db upgrade
 ```
 
-### USAGE
+# USAGE
 First create a SuperAdmin username according to configurations:
 
 ## Create User Request
