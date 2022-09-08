@@ -12,11 +12,11 @@ def get_user(username: str): return jsonify(user_service.get_user(username))
 def list_users(): return jsonify(user_service.list_users())     
 
 @error_handler
-def create_and_train_model(dataset_path: str ,epochs: int,\
+def create_and_train_model(dataset_params: dict , train_params: dict , test_params: dict,\
                          optimizer_params: dict, criterion: str,\
                          model_params: dict, save_model_at: str):
     trained_model_results = predictor_manager_service.create_and_train_model(\
-                    dataset_path ,epochs ,optimizer_params,criterion ,model_params ,save_model_at)
+                    dataset_params, train_params , test_params ,optimizer_params,criterion ,model_params ,save_model_at)
     return jsonify({"accuracy": str(trained_model_results.accuracy),\
                     "saved_model_path": str(trained_model_results.saved_model_path)}), 200
 

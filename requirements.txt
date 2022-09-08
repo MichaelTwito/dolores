@@ -1,6 +1,8 @@
+wheel
 flask
 PyMySQL
 webargs
+cryptography
 grpcio-tools
 flask_migrate
 flask_sqlalchemy

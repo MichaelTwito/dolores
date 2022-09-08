@@ -14,10 +14,11 @@ class PredictorManager(GrpcClient):
                      PetalLengthCm = PetalLengthCm, PetalWidthCm = PetalWidthCm, PathToModel=PathToModel))
         return response
 
-    def create_and_train_model(self, dataset_path ,epochs ,optimizer_params,\
+    def create_and_train_model(self, dataset_params ,train_params ,test_params, optimizer_params,\
                                         criterion ,model_params ,save_model_at):     
         stub = PredictionsStub(self.channel)
         response = super().stub(lambda x: stub.CreateAndTrainModel(x)\
-        ,CreateAndTrainModelRequest(dataset_path=dataset_path ,epochs=epochs ,optimizer_params=optimizer_params,\
+        ,CreateAndTrainModelRequest(dataset_params=dataset_params ,train_params=train_params, test_params=test_params,\
+        optimizer_params=optimizer_params,\
         criterion=criterion ,model_params=model_params ,save_model_at=save_model_at))
         return response

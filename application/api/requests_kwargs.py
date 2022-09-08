@@ -6,8 +6,9 @@ create_user = {"name": fields.Str(required=True),\
 
 get_user = {"username": fields.Str(required=True)}
 
-create_and_train_model = {"dataset_path": fields.String(required=True),\
-                          "epochs": fields.Integer(required=True),\
+create_and_train_model = {"dataset_params": fields.Dict(required=True),\
+                          "train_params": fields.Dict(required=True),\
+                          "test_params": fields.Dict(required=True),\
                           "optimizer_params": fields.Dict(required=True),\
                           "criterion": fields.String(required=True),\
                           "model_params": fields.Dict(requires=True),\

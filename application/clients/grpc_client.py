@@ -1,6 +1,4 @@
-from email import message
 import grpc
-import functools
 from predictions_pb2 import *
 class GrpcClient:
     def __init__(self, address):
