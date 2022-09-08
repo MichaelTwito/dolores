@@ -1,6 +1,6 @@
 
-###### Development
-## PROTOBUFS
+## Development
+# PROTOBUFS
 After updating protobufs protocol, run:
 ```
 python -m grpc_tools.protoc -I ../protobufs --python_out=. \
