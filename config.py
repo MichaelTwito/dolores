@@ -5,7 +5,7 @@ class Config(object):
     DEBUG = False
     TESTING = False
     CSRF_ENABLED = True
-    SECRET_KEY = 'this-really-needs-to-be-changed'
+    SECRET_KEY = os.environ['SECRET_KEY']
     SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
     SUPER_ADMIN_USERNAME = os.environ['SUPER_ADMIN_USERNAME']
     GRPC_PREDICTOR_MANAGER_NODE = os.environ['GRPC_PREDICTOR_MANAGER_NODE']
@@ -26,4 +26,9 @@ class DevelopmentConfig(Config):
 
 
 class TestingConfig(Config):
+    DEBUG = False
     TESTING = True
+    CSRF_ENABLED = False
+    SQLALCHEMY_DATABASE_URI = 'sqlite://'
+    SUPER_ADMIN_USERNAME = os.environ['SUPER_ADMIN_USERNAME']
+    # GRPC_PREDICTOR_MANAGER_NODE = os.environ['GRPC_PREDICTOR_MANAGER_NODE']

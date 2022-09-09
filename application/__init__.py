@@ -11,8 +11,9 @@ def init_app(test_config=None):
 
     app.config.from_object(os.environ['APP_SETTINGS'])
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    # if test_config:
-        # app.config.from_mapping(test_config)
+
+    if test_config:
+        app.config.from_object(test_config)
 
     #Create DB
     if not database_exists(app.config['SQLALCHEMY_DATABASE_URI']):
