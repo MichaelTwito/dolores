@@ -1,6 +1,7 @@
 import pytest
 from dolores_test import app
 from application.services.user_service import create_user, get_user, list_users
+from application.services.api_key_service import create_api_key
 
 def test_create_user(app):
     with app.app_context():

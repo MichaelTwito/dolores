@@ -3,7 +3,6 @@
 class RepositoryBase(object):
     def __init__(self, db):
         self.db = db
-        print(db)
 
     def session(self):
         return self.db.session

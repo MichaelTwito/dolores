@@ -11,6 +11,6 @@ def error_handler(func):
             return jsonify({"message": str(e)}), 500
         except exc.IntegrityError as e:
             raise RuntimeError(str(e.orig))
-        except Exception:
+        except Exception as e:
             return None
     return decorator

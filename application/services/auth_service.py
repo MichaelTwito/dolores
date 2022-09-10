@@ -4,9 +4,6 @@ from . import user_service, api_key_service
 from werkzeug.security import check_password_hash
 
 
-app = current_app._get_current_object()
-super_admin_username = app.config['SUPER_ADMIN_USERNAME']
-
 def is_api_key_valid(api_key):
     return api_key_service.is_exist(api_key)
 
@@ -23,6 +20,7 @@ def is_valid_superadmin(username, password):
     #Empty filters as by default the password is not returned
     filters = []
     user = user_service.get_user(username, filters)
+    super_admin_username = current_app.config['SUPER_ADMIN_USERNAME']
     return True if user and user['name'] == super_admin_username\
              and check_password_hash(user['password'], password)\
              else False
