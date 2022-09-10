@@ -1,8 +1,10 @@
 wheel
 flask
+gevent
 pytest
 PyMySQL
 webargs
+gunicorn
 cryptography
 grpcio-tools
 flask_migrate
