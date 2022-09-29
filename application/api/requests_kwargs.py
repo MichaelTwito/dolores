@@ -20,6 +20,9 @@ predict_iris_species = {"SepalLengthCm": fields.Float(required=True),\
                         "PetalWidthCm": fields.Float(required=True),\
                         "PathToModel": fields.String(required=True)}
 
+predict_brain_tumor_type = {"Base64Image": fields.String(required=True),
+                            "PathToModel": fields.String(required=True)}
+
 create_api_key = {"username": fields.Str(required=True),\
                   "password": fields.Str(required=True),\
                   "api_key_name": fields.Str(required=True)}

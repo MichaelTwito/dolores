@@ -29,6 +29,12 @@ def create_and_train_model(*args, **kwargs): return controller.create_and_train_
 @api_required
 def predict_iris_species(*args, **kwargs): return controller.predict_iris_species(*args, **kwargs)
 
+@router.route('/api/predictions/nerual_networks/predict_brain_tumor_type', methods=["Post"])
+@use_kwargs(requests_kwargs.predict_brain_tumor_type)
+@api_required
+def predict_brain_tumor_type(*args, **kwargs): return controller.predict_brain_tumor_type(*args, **kwargs)
+
+
 @router.route("/api/api_keys", methods = ['POST'])
 @use_kwargs(requests_kwargs.create_api_key)
 @super_admin_required

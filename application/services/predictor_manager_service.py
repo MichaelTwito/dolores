@@ -10,3 +10,6 @@ def create_and_train_model(*args):
 
 def predict_iris_speices(*args):
     return predictor.predict_iris_speices(*args).species
+
+def predict_brain_tumor_type(*args):
+    return predictor.predict_brain_tumor_type(*args).type

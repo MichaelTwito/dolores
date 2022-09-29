@@ -28,5 +28,9 @@ def predict_iris_species(SepalLengthCm: float ,SepalWidthCm: float,\
                     SepalLengthCm, SepalWidthCm,PetalLengthCm, PetalWidthCm, PathToModel)}), 200
 
 @error_handler
+def predict_brain_tumor_type(Base64Image: str, PathToModel: str):
+    return jsonify({"type": predictor_manager_service.predict_brain_tumor_type(Base64Image, PathToModel)}), 200
+
+@error_handler
 def create_api_key(username: str, password: str, api_key_name: str):
     return api_key_service.create_api_key(api_key_name), 200

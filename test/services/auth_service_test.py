@@ -17,7 +17,6 @@ def test_is_valid_superadmin(app):
         super_admin_username = app.config['SUPER_ADMIN_USERNAME']
         password = '123456'
         super_admin_user = create_user(super_admin_username, 'email', password)
-        print(super_admin_user)
         assert True == is_valid_superadmin(super_admin_user['name'], password)
         """when the user is not super admin"""
         assert False == is_valid_superadmin('user', password)
